@@ -31,7 +31,7 @@ form {
     pointer-events: none;
 }
 
-ul {
+form ul {
     opacity: 0;
     height: 0;
     list-style: none;
@@ -39,11 +39,11 @@ ul {
     padding: 0;
 }
 
-li {
-  margin: 8px 0;
+form.open ul {
+    opacity: 1;
+    height: 100%;
 }
 
-.open {
-  opacity: 1;
-  height: 100%;
+li {
+  margin: 8px 0;
 }
