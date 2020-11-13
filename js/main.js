@@ -19,6 +19,7 @@ function initFilter (event) {
     rb1.checked = true;
     if(rb1.checked) {
         filterText.textContent = rb1.value;
+        rb1.parentNode.classList.add("checked");
     }
     
 }
