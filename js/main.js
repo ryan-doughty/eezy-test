@@ -1,18 +1,23 @@
 var selection = document.querySelector(".selection");
 var dropdown = document.querySelector(".dropdown");
 var rbs = document.querySelectorAll("input[name='filter']");
-var duder = document.querySelector(".duder");
+var filterText = document.querySelector(".filter-text");
 
 function filterThingy (event) {
   if(event.target == selection) {
-     dropdown.classList.toggle("show");
+     dropdown.classList.toggle("open");
+  } else if(event.target != selection) {
+     dropdown.classList.remove("open");
   }
 }
 
 function filterChange (event) {
    for(i=0; i< rbs.length; i++) {
       if(event.target == rbs[i]) {
-         duder.innerHTML = rbs[i].value;
+        filterText.innerHTML = rbs[i].value;
+        if(dropdown.classList.contains("open")) {
+            dropdown.classList.remove("open");
+        }
       }
    }
 }
