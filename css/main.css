@@ -12,25 +12,29 @@ form {
   border-radius: 4px;
 }
 
-.selection {
+form .selection {
     user-select: none;
     cursor: pointer;
 }
 
-.arrow-container {
+form .arrow-container {
     width: 10px;
     height: 10px;
     margin-left: 4px;
     display: inline-block;
 }
 
-.arrow-container svg {
+form .arrow-container svg {
     width: 100%;
     height: 100%;
     fill: #333333;
     pointer-events: none;
 }
 
+form.open .arrow-container svg {
+    fill: #fda380;
+    transform: rotate(180deg);
+}
 form ul {
     opacity: 0;
     height: 0;
