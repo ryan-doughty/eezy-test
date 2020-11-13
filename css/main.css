@@ -10,12 +10,12 @@ form {
   padding: 20px 10px;
   border: 1px solid #999;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 form .selection {
     user-select: none;
-    cursor: pointer;
-    display: flex;
+    pointer-events: none;
 }
 
 form .arrow-container {
