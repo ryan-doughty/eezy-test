@@ -5,6 +5,7 @@ var rbs = document.querySelectorAll("input[name='filter']");
 var filterText = document.querySelector(".filter-text");
 
 function filterThingy (event) {
+    console.log(event.target);
   if(event.target == form) {
      form.classList.toggle("open");
   } else if(event.target != form) {
@@ -14,21 +15,24 @@ function filterThingy (event) {
 
 function initFilter (event) {
     //do stuff
-    var rbs1 = document.querySelector("input[name='filter']:first-child");
-    rbs1.checked = true;
-    if(rbs1.checked) {
-        filterText.textContent = rbs1.value;
+    var rb1 = document.querySelector("input[name='filter']:first-child");
+    rb1.checked = true;
+    if(rb1.checked) {
+        filterText.textContent = rb1.value;
     }
     
 }
 
 function filterChange (event) {
    for(i=0; i< rbs.length; i++) {
-      if(event.target == rbs[i]) {
+      if(event.target == rbs[i] || event.target == rbs[i].parentNode) {
+        rbs[i].parentNode.classList.add("checked");
         filterText.textContent = rbs[i].value;
         if(form.classList.contains("open")) {
             form.classList.remove("open");
         }
+      }  else {
+          rbs[i].parentNode.classList.remove("checked");
       }
    }
 }
@@ -37,3 +41,5 @@ function filterChange (event) {
 window.addEventListener("load", initFilter, false);
 window.addEventListener("click", filterThingy, false);
 window.addEventListener("change", filterChange, false);
+
+
