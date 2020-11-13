@@ -76,10 +76,33 @@ form ul li {
 form ul li label {
     width: 100%;
     display: block;
+    position: relative;
 }
 
-/* form ul li input,
-form ul li label {
-    user-select: none;
-    pointer-events: none;
-} */
+form ul li label::before {
+    display: inline-block;
+    content: "";
+    width: 13px;
+    height: 13px;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(25%);
+}
+
+form ul li label.checked::after {
+    display: inline-block;
+    content: "";
+    width: 9px;
+    height: 9px;
+    background-color: #fda380;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    top: 7px;
+}
+
+form ul li input {
+    opacity: 0;
+    margin-left: 2px;
+}
