@@ -15,7 +15,7 @@ function filterThingy (event) {
 function filterChange (event) {
    for(i=0; i< rbs.length; i++) {
       if(event.target == rbs[i]) {
-        filterText.innerHTML = rbs[i].value;
+        filterText.textContent = rbs[i].value;
         if(form.classList.contains("open")) {
             form.classList.remove("open");
         }

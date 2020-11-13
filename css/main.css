@@ -15,6 +15,7 @@ form {
 form .selection {
     user-select: none;
     cursor: pointer;
+    display: flex;
 }
 
 form .arrow-container {
