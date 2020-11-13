@@ -5,11 +5,21 @@ var rbs = document.querySelectorAll("input[name='filter']");
 var filterText = document.querySelector(".filter-text");
 
 function filterThingy (event) {
-  if(event.target == selection) {
+  if(event.target == form) {
      form.classList.toggle("open");
-  } else if(event.target != selection) {
+  } else if(event.target != form) {
      form.classList.remove("open");
   }
+}
+
+function initFilter (event) {
+    //do stuff
+    var rbs1 = document.querySelector("input[name='filter']:first-child");
+    rbs1.checked = true;
+    if(rbs1.checked) {
+        filterText.textContent = rbs1.value;
+    }
+    
 }
 
 function filterChange (event) {
@@ -23,5 +33,7 @@ function filterChange (event) {
    }
 }
 
+
+window.addEventListener("load", initFilter, false);
 window.addEventListener("click", filterThingy, false);
 window.addEventListener("change", filterChange, false);
