@@ -1,5 +1,5 @@
 * {
-  font-family: sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -7,6 +7,14 @@
 form {
   width: 25%;
   margin: 2rem auto;
+  padding: 20px 10px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.selection {
+    user-select: none;
+    cursor: pointer;
 }
 
 .arrow-container {
@@ -24,6 +32,7 @@ form {
 
 ul {
     opacity: 0;
+    height: 0;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -33,6 +42,7 @@ li {
   margin: 8px 0;
 }
 
-.show {
+.open {
   opacity: 1;
+  height: 100%;
 }
